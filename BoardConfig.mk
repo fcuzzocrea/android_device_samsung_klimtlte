@@ -63,8 +63,8 @@ TARGET_LD_SHIM_LIBS += \
     /system/bin/gpsd|libshim.so
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
-BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
+#BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
+#BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 
 # Cyanogen Hardware
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
