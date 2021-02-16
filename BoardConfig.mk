@@ -45,6 +45,9 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 # Cyanogen Hardware
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
@@ -56,6 +59,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
+
+# Shim
+TARGET_LD_SHIM_LIBS += \
+    /system/bin/gpsd|libshim.so
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy

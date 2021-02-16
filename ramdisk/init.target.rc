@@ -1,8 +1,5 @@
 import init.baseband.rc
 
-on init
-    export LD_SHIM_LIBS "/system/bin/gpsd|libshim.so"
-
 on boot
 
 # Fingerprint
@@ -70,11 +67,6 @@ on boot
     chown system radio /sys/class/sensors/grip_sensor/calibration
     chown system radio /sys/class/sensors/grip_sensor/threshold
     chown system radio /sys/class/sensors/grip_sensor/onoff
-
-service fingerprintd /system/bin/fingerprintd
-    class main
-    user system
-    group input
 
 # SENSOR FRAMEWORK : starts fingerprintService
 service vcsFPService /system/bin/vcsFPService
