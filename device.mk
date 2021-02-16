@@ -33,6 +33,10 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
+# Livedisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.samsung-exynos
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd \
