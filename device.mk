@@ -96,6 +96,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
 
+# Shipping API level
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/klimtlte/klimtlte-vendor.mk)
 
