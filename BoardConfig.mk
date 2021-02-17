@@ -67,7 +67,7 @@ TARGET_LD_SHIM_LIBS += \
 #BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 
 # Cyanogen Hardware
-BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
+# BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
 # Camera: portrait orientation
 BOARD_CAMERA_FRONT_ROTATION := 270
