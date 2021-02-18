@@ -61,9 +61,5 @@ LZMA_RAMDISK_TARGETS := recovery
 # SELinux
 #BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 
-# Shim
-TARGET_LD_SHIM_LIBS += \
-    /system/bin/gpsd|libshim.so
-
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk
