@@ -22,6 +22,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal large xlarge
 
+# AdvancedDisplay (MDNIE)
+PRODUCT_PACKAGES += \
+    AdvancedDisplay 
+
 # Audio HAL
 PRODUCT_PACKAGES += \
     audio.primary.universal5420
