@@ -8,7 +8,7 @@
     GpioDelayMs="250"
     NvStorageDir="/data/system/gps/"
 
-    LogDirectory="/storage/sdcard0/gps/broadcom/storage"
+    LogDirectory="/storage/emulated/0/gps/broadcom/storage"
 
     WakeLock="geo"
 
@@ -16,6 +16,7 @@
     CpColdStart="false"
     CpGuardTimeSec="1"
     ReAidingOnHotStart="false"
+    SuplSslMethod="SSLv23_NO_TLSv1_2"
     SuplEnable="true"
     SuplUseApn="false"
     SuplTlsCertPath="/system/bin/gps.cer"
@@ -23,14 +24,17 @@
     SuplUT2Seconds="20"
     SuplUT3Seconds="20"
     SuplVersion="1"
+    TcpConnectionTimeout="20"
 
     LbsEnable="true"
     LbsServer="BCMLS2.glpals.com"
+    RtiConfig="gllto.glpals.com:80/rtistatus3.dat"
     HttpSyncLto="true"
     LbsCellEnable="false"
     LtoDir="/data/system/gps/"
     LtoSyncThresholdDays="1"
 
+    HulaSensorMask="0x1F"
     IgnoreJniTime="true"
     AssertEnabled="false"
    />
