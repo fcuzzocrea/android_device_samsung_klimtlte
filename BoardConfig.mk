@@ -57,6 +57,7 @@ BOARD_MODEM_TYPE := xmm7260
 
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.universal5420
 
 # SELinux
 #BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
