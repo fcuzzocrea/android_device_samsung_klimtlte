@@ -63,3 +63,6 @@ LZMA_RAMDISK_TARGETS := recovery
 
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk
+
+# Inherit from the proprietary version
+-include vendor/samsung/klimtlte/BoardConfigVendor.mk

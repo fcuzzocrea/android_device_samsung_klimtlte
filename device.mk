@@ -93,4 +93,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 include device/samsung/exynos5420-common/exynos5420.mk
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/klimtlte/klimtlte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/s5neolte/klimtlte-vendor.mk)
