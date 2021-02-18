@@ -16,27 +16,25 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from klimtlte device
 $(call inherit-product, device/samsung/klimtlte/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit more LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/telephony.mk)
-
-PRODUCT_BRAND := samsung
-PRODUCT_NAME := lineage_klimtlte
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := klimtlte
+PRODUCT_NAME := lineage_klimtlte
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-T705
+PRODUCT_MANUFACTURER := samsung
+
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_MODEL=SM-T705 \
-    PRODUCT_NAME=klimtlte \
-    PRODUCT_DEVICE=klimtlte \
-    PRIVATE_BUILD_DESC="samsung/klimtltexx/klimtlte:6.0.1/MMB29K/T705XXU1CQB1:user/release-keys" \
-    TARGET_DEVICE=klimtlte
+    PRODUCT_NAME=klimtltexx \
+    PRIVATE_BUILD_DESC="samsung/klimtltexx/klimtlte:6.0.1/MMB29K/T705XXU1CQB1:user/release-keys"
 
 BUILD_FINGERPRINT := samsung/klimtltexx/klimtlte:6.0.1/MMB29K/T705XXU1CQB1:user/release-keys
