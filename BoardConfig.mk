@@ -16,35 +16,31 @@
 
 LOCAL_PATH := device/samsung/klimtlte
 
-# Platform
-BOARD_VENDOR := samsung
-TARGET_SOC := exynos5420
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := klimtlte
 
 # Audio
 TARGET_AUDIOHAL_VARIANT := samsung
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-# hardware/samsung/ril
-BOARD_MODEM_TYPE := xmm7260
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
-# Bootloader
-TARGET_OTA_ASSERT_DEVICE := klimtlte
+# Camera
+BOARD_CAMERA_FRONT_ROTATION := 270
+BOARD_CAMERA_BACK_ROTATION := 90
+
+# HIDL
+DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_klimtlte_defconfig
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
-# Cyanogen Hardware
-BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
-
-# HIDL
-DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/manifest.xml
+# Legacy BLOB Support
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/vendor/bin/hw/rild=27
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -55,23 +51,19 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+BOARD_MODEM_TYPE := xmm7260
+
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
+
+# SELinux
+#BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
 
 # Shim
 TARGET_LD_SHIM_LIBS += \
     /system/bin/gpsd|libshim.so
-
-# SELinux
-#BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
-#BOARD_SEPOLICY_DIRS += device/samsung/klimtlte/sepolicy
-
-# Cyanogen Hardware
-# BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
-
-# Camera: portrait orientation
-BOARD_CAMERA_FRONT_ROTATION := 270
-BOARD_CAMERA_BACK_ROTATION := 90
 
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk
