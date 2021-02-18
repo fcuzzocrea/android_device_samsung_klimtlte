@@ -61,10 +61,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true \
-    ro.com.android.dataroaming=true
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -88,23 +84,14 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     modemloader
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=unknown
-
-# call dalvik heap and hwui config
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=16m \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
+# System properties
+-include $(LOCAL_PATH)/system_prop.mk
 
 # Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
-# call the proprietary setup
-$(call inherit-product, vendor/samsung/klimtlte/klimtlte-vendor.mk)
-
 # Import the common tree changes
 include device/samsung/exynos5420-common/exynos5420.mk
+
+# call the proprietary setup
+$(call inherit-product, vendor/samsung/klimtlte/klimtlte-vendor.mk)
